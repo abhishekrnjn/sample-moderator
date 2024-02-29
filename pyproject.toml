@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "sample_moderator"
+version = "0.0.0"
+description = "Sample scripts for AI moderator"
+authors = ["Federated SNS Team <contact-federated-sns@cs.jp.fujitsu.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8.1, <3.13"
+atproto = {git = "https://github.com/FujitsuResearch/atproto-python.git"}
+langchain-openai = "^0.0.8"
+openai = "^1.13.3"
+numpy = [
+    {version = ">=1.26", python = ">=3.9"},
+    {version = "<1.25", python = "=3.8"}
+]
+langchain = "^0.1.9"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
