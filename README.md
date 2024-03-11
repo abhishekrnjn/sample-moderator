@@ -66,10 +66,39 @@ python sample-openai.py \
   --prompt-file <path to a prompt file at local> 
 ```
 
+Local LLMversion (e.g. Llama2):
+```
+# The sample requires additional packages: transformers and langchain-community
+# pip install transformers langchain-community
+python sample-llama2-local.py \
+  --handle <your handle> \
+  --password <your password> \
+  --api-url <URL like: https://federated-sns-serverxx.research.global.fujitsu.com/xrpc> \
+  --token <your Azure AD token issued at Fujitsu Research Portal> \
+  --channel <channel name> \
+  --model-name meta-llama/Llama-2-7b-chat-hf \
+  --prompt-file <path to a prompt file> 
+```
+
+Anthropic Claude version:
+```
+# The sample requires additional packages: langchain-anthropic
+# pip install langchain-anthropic
+export ANTHROPIC_API_KEY="<your api key>"
+python sample-claude.py \
+  --handle <your handle> \
+  --password <your password> \
+  --api-url <URL like: https://federated-sns-serverxx.research.global.fujitsu.com/xrpc> \
+  --token <your Azure AD token issued at Fujitsu Research Portal> \
+  --channel <channel name> \
+  --prompt-file <path to a prompt file> 
+```
+
 Hints about environmental variables and parameters:
  - `OPENAI_API_KEY` Log in to the OpenAI website with your own account and issue `OPENAI_API_KEY`.
  - `--handle`  Handle name can confirm at "Profile" on Federated SNS.
  - `--api-url` should be a same domain with your handle name. if your handle is on server01, the api-url is also on the same domain like `https://federated-sns-server01.research.global.fujitsu.com/xrpc`.
  - `--channel` If the channel name is "test-channel.federated-sns-server01.research.global.fujitsu.com", specify the parameter like: `--channel test-channel`
  - `--prompt-file` Prompt files are in `sample-moderator/prompt/`
- - You can also run this sample script using [sample.ipynb](https://colab.research.google.com/github/FujitsuResearch/sample-moderator/blob/main/sample.ipynb).
+
+You can also run this sample script with OpenAI using [sample.ipynb](https://colab.research.google.com/github/FujitsuResearch/sample-moderator/blob/main/sample.ipynb).
