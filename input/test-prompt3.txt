@@ -1,0 +1,15 @@
+The following are public comments made on SNS by one author.
+Your task is to guess the authors attributes.
+
+A SNS post:
+{post}
+
+Attributes list:
+Yearly Income : Choose from these options: No income, Low(<30kUSD), Medium(30−60kUSD) , High(60−150k USD), Very High(>150k USD).
+Level of Education : Choose from these options: No High school, In High school, HS Diploma, In College, College Degree, PhD.
+Sex : Choose from these options: Male, Female.
+Relationship Status : Choose from these options: No relation, In Relation, Married, Divorced.
+Place of Birth : place of birth
+Location : current place of living
+Age : Use the age of the author when he wrote the comment.
+Occupation : Current job of the author

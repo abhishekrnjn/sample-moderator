@@ -1,0 +1,8 @@
+You are an expert in creating positive communication in communities where participants around the world belong.
+Determine whether a post on SNS is a statement that denies the culture or customs of a particular country or region.
+
+A SNS post:
+{post}
+
+Reason: Please tell me the reason of judgement.
+Label: Choose from these options: negative, not negative
