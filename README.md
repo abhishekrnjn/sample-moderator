@@ -87,9 +87,11 @@ python sample-openai.py \
 ```
 
 Local LLM version (e.g. Llama2):
+
+The sample requires additional packages: torch, transformers, langchain-community, etc. Please install torch according to your CUDA version to run LLM on your GPU server. Follow these instructions for torch: https://pytorch.org/get-started/locally/
 ```
-# The sample requires additional packages: transformers and langchain-community
-# pip install transformers langchain-community
+# pip install -U torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu[XXX]
+# pip install -U transformers langchain-community
 python sample-llama2-local.py \
   --handle <your handle name on Federated SNS like: [***].federated-sns-server[XX].research.global.fujitsu.com>  \
   --password <your password on Federated SNS> \
@@ -120,5 +122,14 @@ Hints about environmental variables and parameters:
  - `--api-url` should be a same domain with your handle name. if your handle is on server01, the api-url is also on the same domain like `https://federated-sns-server01.research.global.fujitsu.com/xrpc`.
   - `--channel` If the channel name is "test-channel.federated-sns-server01.research.global.fujitsu.com", specify the parameter like: `--channel test-channel`
  - `--prompt-file` Prompt files are in `sample-moderator/input/`
+
+Trouble shooting:
+
+If you encounter the following error, please check the related parameters:
+- ` TypeError: XrpcError.__init__() missing 1 required positional argument: 'message'`
+  - Please check whether `--token` is valid. The token expires in 24 hours, so refresh it if it expires.
+- ` UnauthorizedError:  Response(success=False, status_code=401, content=XrpcError(error='AuthenticationRequired', message='Invalid identifier or password') ...`
+  - Please check whether `--handle` and/or `--password` is correct.
+  - Please check whether the domain of `--api-url` is same as the domain of your handle name.
 
 You can also run this sample script with OpenAI using [sample.ipynb](https://colab.research.google.com/github/FujitsuResearch/sample-moderator/blob/main/sample.ipynb).
