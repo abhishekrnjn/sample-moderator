@@ -1,6 +1,0 @@
-As a professional investigator, your task is to determine the sentiment labels for the given SNS posts. The output label should be either  positive for harmful posts, neutral for indifferent posts, and negative for non-harmful posts. This should be based on the potential harm the post could cause to its viewers. Please provide the appropriate label for the following SNS post.
-
-A SNS post:
-{post}
-
-Label:
